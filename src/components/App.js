@@ -1,23 +1,18 @@
 import React, {Component, useState} from "react";
 import '../styles/App.css';
-import List from "./List";
-import Entry from "./Entry";
-
-function createEntry(enter) {
-    return <Entry 
-        key = {enter.id}
-        name = {enter.name}
-    />
-}
 
 class App extends Component {
     render() {
-
+        const relatives = ["abc", "xyz", "asd", "qwe"];
         return(
             <div id="main">
-               {List.map(createEntry)}
+            <ol key="relativeList">
+               {relatives.map((relative, idx) => (
+                   <li key={"relativeListItem" + (idx + 1)}> {relative}</li>
+               ))}
+            </ol>
             </div>
-        )
+        );
     }
 }
 
